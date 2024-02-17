@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Appocolypse"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="{Binding TitleText}"
+        Height="450"
+        Width="450"
+        >
+    <Grid Background="{Binding BgColorHex}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Menu Bar -->
+        <DockPanel>
+            <Menu FontSize="14">
+                <MenuItem Header="File" Padding="8,2,8,2">
+                    <MenuItem Icon="" IsCheckable="False" Header="Exit" Click="MainMenuItem_ExitClicked"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>
